@@ -22,8 +22,6 @@ Inspired by my bot skeleton [BatsyBot](https://github.com/MohamedYasser97/BatsyB
   * __subreddits.js__\
    Enter all the subreddits you want the bot to get and tweet random images from.
   - - - -
-  Make sure that you actually have the logs, images, data and analytics directories present in your project directory and make sure that
-  your data.json file has correct syntax before starting ({} if empty).\
   \
   Start the bot with the command:
   `npm start`\
