@@ -1,5 +1,5 @@
 # ArtsyBot
-Inspired by my bot skeleton BatsyBot, ArtsyBot is a Twitter bot that tweets random art from reddit 
+Inspired by my bot skeleton [BatsyBot](https://github.com/MohamedYasser97/BatsyBot), ArtsyBot is a Twitter bot that tweets random art from reddit 
 
 
 ## Functions
