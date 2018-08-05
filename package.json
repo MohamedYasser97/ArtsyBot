@@ -1,0 +1,23 @@
+{
+  "name": "artsybot",
+  "version": "1.0.0",
+  "description": "A twitter bot that tweets random art.",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bot",
+    "twitter",
+    "art"
+  ],
+  "author": "Mohamed Yasser",
+  "license": "MIT",
+  "dependencies": {
+    "image-downloader": "^3.4.1",
+    "is-online": "^7.0.0",
+    "node-fetch": "^2.2.0",
+    "twit": "^2.2.11"
+  }
+}
