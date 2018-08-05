@@ -20,7 +20,7 @@ Inspired by my bot skeleton [BatsyBot](https://github.com/MohamedYasser97/BatsyB
    or disable analysis mode by uncommenting its code.
   - - - -
   * __subreddits.js__\
-   Enter all the subreddits you want the bot to get and tweet random images from.
+   Enter the names of all the subreddits you want the bot to get and tweet random images from.
   - - - -
   \
   Clone this repository then start the bot with the command:
