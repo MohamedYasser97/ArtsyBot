@@ -58,7 +58,7 @@ module.exports={
 		let stat = fs.statSync('./data/data.json');
 
 		fs.truncateSync('./data/data.json',stat.size-1);
-		fs.appendFileSync('./data/data.json',`${stat.size==2 ? '' : ',\n'}"${this.generateKey(url)}":1}`);
+		fs.appendFileSync('./data/data.json',`${stat.size==2 ? '' : ','}"${this.generateKey(url)}":1}`);
 
 	}
 
