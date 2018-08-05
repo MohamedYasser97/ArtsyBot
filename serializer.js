@@ -11,6 +11,9 @@ var fs = require('fs');
 	a json file so data isn't lost when I close the app.
 */
 
+if(fs.existsSync('./data/data.json')==false)
+	fs.appendFileSync('./data/data.json','{}');
+
 var map = JSON.parse(fs.readFileSync('./data/data.json', 'utf8'));
 
 module.exports={
