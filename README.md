@@ -12,6 +12,7 @@ Inspired by my bot skeleton [BatsyBot](https://github.com/MohamedYasser97/BatsyB
   
 
 ## Usage
+After cloning this repository, you'll need to take a look on these files:
   * __config.js__\
    This file contains the Twitter API keys that can be accessed from [here](https://apps.twitter.com/).
   - - - - 
@@ -23,7 +24,7 @@ Inspired by my bot skeleton [BatsyBot](https://github.com/MohamedYasser97/BatsyB
    Enter the names of all the subreddits you want the bot to get and tweet random images from.
   - - - -
   \
-  Clone this repository then start the bot with the command:
+  Now start the bot with the command:
   `npm start`\
   \
   For further info., visit [BatsyBot](https://github.com/MohamedYasser97/BatsyBot) and read its [README file](https://github.com/MohamedYasser97/BatsyBot/blob/master/README.md)
