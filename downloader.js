@@ -50,7 +50,7 @@ module.exports={
   		} catch (e) {
 
     		log('    -> Image download failed');
-    		this.checkConnection();
+    		process.exit();
   		}		
 		
 
