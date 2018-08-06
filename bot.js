@@ -13,7 +13,13 @@ log('* The bot started successfully!\r\n\r\n------------------------------------
 tweeter.tweetImage();
 setInterval(tweeter.tweetImage,1000*60*20);
 
+
+function initAnalyzer(tests){
+
+	var analyze = require('./analyzer');
+	log(`* Analysis started! Check analysis logs\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------------------------------------------------------------------------`);
+	analyze(tests);
+}
+
 //Uncomment the following code to start analysis
-//var analyze = require('./analyzer');
-//log(`* Analysis started! Check analysis logs\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------------------------------------------------------------------------`);
-//analyze(100);
+//initAnalyzer(100);
