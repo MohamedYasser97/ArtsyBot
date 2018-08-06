@@ -3,12 +3,12 @@ Inspired by my bot skeleton [BatsyBot](https://github.com/MohamedYasser97/BatsyB
 
 
 ## Functions
-  * The bot tweets jpg and png images randomly from given subreddits in any time interval (gifs soon!).
+  * The bot tweets jpg and png images randomly from given subreddits in any time interval (GIFs soon!).
   * Analysis mode for giving statistics about subreddits.
   * Data is stored in a hash table to prevent tweeting duplicated media.
   * Readable and informative console logs with important data describing every process of sending a tweet.
   * All logs are stored in different files.
-  * The bot has a safety mechanism when there is no Internet connection so it tweets when there is connectivity without messing with the time interval.
+  * The bot has a safety mechanism when there is no Internet connection so it tweets only when there is connectivity without messing with the time interval.
   
 
 ## Usage
@@ -17,8 +17,8 @@ After cloning this repository, you'll need to take a look on these files:
    This file contains the Twitter API keys that can be accessed from [here](https://apps.twitter.com/).
   - - - - 
   * __bot.js__\
-   This is the bot's main file that should be run. In this file you can specify the interval between every tweet and you can also enable
-   or disable analysis mode by uncommenting its code.
+   This is the bot's main file. In this file you can specify the interval between every tweet and you can also enable
+   or disable analysis mode by uncommenting its called function.
   - - - -
   * __subreddits.js__\
    Enter the names of all the subreddits you want the bot to get and tweet random images from.
