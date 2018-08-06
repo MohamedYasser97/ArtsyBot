@@ -17,7 +17,7 @@ async function resurrect(){
 
 		if(online){
 
-			log('    -> Connected to internet');
+			log('    -> Connected to internet\r\n');
 			process.exit();
 
 		}
