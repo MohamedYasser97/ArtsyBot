@@ -13,10 +13,6 @@ module.exports={
 		var url = await downloader.getImage();
 		var b64 = fs.readFileSync('./images/x.jpg', { encoding: 'base64' });
     
-    //keeps checking for internet connection every 6 seconds (timeout is 5 seconds)
-    downloader.checkConnection();
-    var checkConnectionInterval = setInterval(downloader.checkConnection,1000*6);
-
 		log('* Uploading image...');
 
 		main.T.post('media/upload', {media_data: b64}, function (err, data, response) {
@@ -32,9 +28,7 @@ module.exports={
 
       					if(err){
       						log(`    -> Error sending tweet!\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------------------------------------------------------------------------`);
-      						
-                  clearInterval(checkConnectionInterval);
-      						
+      						      						
                   process.exit();
       						return;
       					}
@@ -44,8 +38,6 @@ module.exports={
 
       					log(`    -> Tweet sent!\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------------------------------------------------------------------------`);
 
-                clearInterval(checkConnectionInterval);
-
                 return;
       				});
 
@@ -53,8 +45,6 @@ module.exports={
 
     				log('    -> Error uploading image!');
     				   				
-            clearInterval(checkConnectionInterval);
-
             process.exit();
             return;
     			}
