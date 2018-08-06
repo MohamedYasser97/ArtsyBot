@@ -12,7 +12,10 @@ module.exports={
 		
 		var url = await downloader.getImage();
 		var b64 = fs.readFileSync('./images/x.jpg', { encoding: 'base64' });
- 
+    
+    //keeps checking for internet connection every 6 seconds (timeout is 5 seconds)
+    downloader.checkConnection();
+    var checkConnectionInterval = setInterval(downloader.checkConnection,1000*6);
 
 		log('* Uploading image...');
 
@@ -30,9 +33,9 @@ module.exports={
       					if(err){
       						log(`    -> Error sending tweet!\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------------------------------------------------------------------------`);
       						
-      						require('child_process').execSync('start cmd @cmd /c node controller.js && exit');
-							    process.exit();
+                  clearInterval(checkConnectionInterval);
       						
+                  process.exit();
       						return;
       					}
 
@@ -40,14 +43,20 @@ module.exports={
       					table.add(url);
 
       					log(`    -> Tweet sent!\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------------------------------------------------------------------------`);
+
+                clearInterval(checkConnectionInterval);
+
+                return;
       				});
 
     			}else{
 
     				log('    -> Error uploading image!');
-    				
-    				require('child_process').execSync('start cmd @cmd /c node controller.js && exit');
-					  process.exit();
+    				   				
+            clearInterval(checkConnectionInterval);
+
+            process.exit();
+            return;
     			}
   			});
 		});
