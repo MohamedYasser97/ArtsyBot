@@ -6,6 +6,8 @@ var subreddit = require('./subreddits');
 var URLgetter = require('./getter');
 var log = require('./logger');
 
+var checkConnectionInterval;
+
 module.exports={
 
 	//downloads a random image and returns its URL
@@ -13,7 +15,7 @@ module.exports={
 
 		//keeps checking for internet connection every 6 seconds (timeout is 5 seconds)
 		this.checkConnection();
-		var checkConnectionInterval = setInterval(this.checkConnection,1000*6);
+		checkConnectionInterval = setInterval(this.checkConnection,1000*6);
 
 		//selecting randomly which subreddit to post from
 		var selectedSubreddit = await subreddit.randomSubreddit();
@@ -60,16 +62,19 @@ module.exports={
 
 	},
 
-	//checks for internet connectivity, if no connection then trigger controller.js and exit
+	//checks for internet connectivity, if no connection then trigger child process controller.js 
 	checkConnection : function(){
 
-		isOnline().then(online => {
+		isOnline().then(online=>{
 
-				if(!online){
-					require('child_process').execSync('start cmd @cmd /c node controller.js && exit');
-					process.exit();
-				}
-			});
+			if(!online){
 
+				require('child_process').execSync('node controller.js',{stdio:[0,1,2]});
+
+				process.exit();
+
+			}
+
+		});
 	}
 }
