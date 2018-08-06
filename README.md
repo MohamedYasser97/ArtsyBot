@@ -8,7 +8,8 @@ Inspired by my bot skeleton [BatsyBot](https://github.com/MohamedYasser97/BatsyB
   * Data is stored in a hash table to prevent tweeting duplicated media.
   * Readable and informative console logs with important data describing every process of sending a tweet.
   * All logs are stored in different files.
-  * The bot has a safety mechanism when there is no Internet connection so it tweets only when there is connectivity without messing with the time interval.
+  * The bot has a safety mechanism that aborts the app automatically when there is no Internet connection and restarts
+  when the connection returns without messing with the tweet time intervals.
   
 
 ## Usage
