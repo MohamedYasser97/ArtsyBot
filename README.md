@@ -2,7 +2,7 @@
 Inspired by my bot skeleton [BatsyBot](https://github.com/MohamedYasser97/BatsyBot), ArtsyBot is a Twitter bot that tweets random art from reddit 
 
 
-## Functions
+## Features
   * The bot tweets jpg and png images randomly from given subreddits in any time interval (GIFs soon!).
   * Analysis mode for giving statistics about subreddits.
   * Data is stored in a hash table to prevent tweeting duplicated media.
@@ -31,8 +31,7 @@ After cloning this repository, you'll need to take a look on these files:
   For further info., visit [BatsyBot](https://github.com/MohamedYasser97/BatsyBot) and read its [README file](https://github.com/MohamedYasser97/BatsyBot/blob/master/README.md)
   
  ## Personal Request
-   Anyone can use this project as they like but I would love to get credited in any possible way. Let it be a mention on Twitter, an E-mail or 
-   a Facebook message. Just let me know if my project is useful in any way or if something needs to be fixed. Happy coding and I hope you build amazing bots!\
+   I would love to get credited in any possible way. You can mention me in your bot's Twitter bio or just mention my name or put any of my contact links from below. Please DO let me know if my project is useful in any way or if something needs to be fixed. Happy coding and I hope you build amazing bots!\
    [Twitter](https://twitter.com/yassermo97)\
    [Facebook](https://www.facebook.com/myasser99)\
    __mhmd.yasser@gmail.com__
