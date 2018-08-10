@@ -25,10 +25,17 @@ After cloning this repository, you'll need to take a look on these files:
    Enter the names of all the subreddits you want the bot to get and tweet random images from.
   - - - -
   \
-  Now start the bot with the command:
+  If you face any problems on platforms other than Windows, I advise that you delete the node_modules directory and install
+  the following packages:
+  * [twit](https://www.npmjs.com/package/twit)
+  * [node-fetch](https://www.npmjs.com/package/node-fetch)
+  * [is-online](https://www.npmjs.com/package/is-online)
+  * [image-downloader](https://www.npmjs.com/package/image-downloader)
+ 
+Now start the bot with the command:
   `npm start`\
   \
-  For further info., visit [BatsyBot](https://github.com/MohamedYasser97/BatsyBot) and read its [README file](https://github.com/MohamedYasser97/BatsyBot/blob/master/README.md)
+For further info., visit [BatsyBot](https://github.com/MohamedYasser97/BatsyBot) and read its [README file](https://github.com/MohamedYasser97/BatsyBot/blob/master/README.md)
   
  ## Personal Request
    I would love to get credited in any possible way. You can mention me in your bot's Twitter bio or just mention my name or put any of my contact links from below. Please DO let me know if my project is useful in any way or if something needs to be fixed. Happy coding and I hope you build amazing bots!\
