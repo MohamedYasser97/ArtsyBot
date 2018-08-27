@@ -5,7 +5,7 @@ var fs = require('fs');
 const log=(data)=>{
 
 	console.log(data);
-	fs.appendFileSync(`./logs/log_${new Date().getMonth()}_${new Date().getFullYear()}.txt`,`${data}\r\n`);
+	fs.appendFileSync(`./logs/log_${new Date().getMonth()+1}_${new Date().getFullYear()}.txt`,`${data}\r\n`);
 };
 
 module.exports=log;
