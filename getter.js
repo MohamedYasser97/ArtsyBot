@@ -9,7 +9,8 @@ var fetch = require('node-fetch');
     and used (node-fetch) and added some other useful functionality
 */
 
-//returns -1 if it doesn't find a non-crossposted jpg/png iamge
+//returns -1 if it doesn't find a non-crossposted jpg/png image
+//UPDATE: URL formats have been updated but I still have to return the old format to check it against the hash table
 const getURL =  function(subreddit){
 
 	return new Promise((resolve, reject) => {
@@ -19,17 +20,21 @@ const getURL =  function(subreddit){
         .then(json => {
 
             let image;
+            let oldImage;
             let crossParent;
 
             try {
 
-                image = json[0].data.children[0].data.preview.images[0].source.url;
+                image = json[0].data.children[0].data.url;
+                oldImage = json[0].data.children[0].data.preview.images[0].source.url;
                 crossParent = json[0].data.children[0].data.crosspost_parent;
 
             } catch (error) {
 
-                image = json.data.children[0].data.preview.images[0].source.url;
+                image = json.data.children[0].data.url;
+                oldImage = json[0].data.children[0].data.preview.images[0].source.url;
                 crossParent = json.data.children[0].data.crosspost_parent;
+
             }
 
             if (!image) 
@@ -38,12 +43,12 @@ const getURL =  function(subreddit){
             if(crossParent)
                 return resolve('-1');
 
-            let extension = image.substring(image.lastIndexOf('?')-3,image.lastIndexOf('?'));
+            let extension = image.substring(image.lastIndexOf('.')+1,image.lastIndexOf('.')+4);
 
             if(extension!='jpg' && extension!='png')
             	return resolve('-1');
             
-            return resolve(image);
+            return resolve([image,oldImage]);
 
         })
         .catch((err) => {
