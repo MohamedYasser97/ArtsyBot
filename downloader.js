@@ -30,7 +30,7 @@ module.exports={
 		while(imageURL==='-1' || table.exists(imageURL[0]) || table.existsOld(imageURL[1]))
 			imageURL = await URLgetter(selectedSubreddit);
 		
-		log('    -> Image successfully fetched!' + `\r\n* Image URL: ${imageURL[0]}` + '\r\n* Downloading Image...');
+		log('    -> Image successfully fetched!' + `\r\n* Image URL: ${imageURL[0]}` + `\r\n* Image source: https: https://www.reddit.com${imageURL[2]}` + '\r\n* Downloading Image...');
 	
 		//setting download options by specifying URL and destination
 		const downloadOptions = {
