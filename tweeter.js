@@ -27,7 +27,7 @@ module.exports={
       				main.T.post('statuses/update', {media_ids: [mediaId]}, function (err, data, response) {
 
       					if(err){
-      						log(`    -> Error sending tweet!\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------------------------------------------------------------------------`);
+      						log(`    -> Error sending tweet!\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------`);
       						      						
                   process.exit();
       						return;
@@ -36,7 +36,7 @@ module.exports={
                 //doesn't add the URL to the hash table unless the tweet is successfully sent
       					table.add(url);
 
-      					log(`    -> Tweet sent!\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------------------------------------------------------------------------`);
+      					log(`    -> Tweet sent!\r\n    -> ${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()},${new Date().toLocaleString('en-GB',{timezone: 'Africa/Cairo',hour12: true}).split(',').pop()}\r\n----------------------------------------------------------`);
 
                 return;
       				});
