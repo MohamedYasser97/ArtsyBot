@@ -7,7 +7,7 @@ var log = require('./logger');
 var T = new Twit(config);
 module.exports.T=T;
 
-log('* The bot started successfully!\r\n\r\n----------------------------------------------------------------------------------------------------------------------------');
+log('* The bot started successfully!\r\n\r\n----------------------------------------------------------');
 
 //every hour, 3 random images will be tweeted
 tweeter.tweetImage();
