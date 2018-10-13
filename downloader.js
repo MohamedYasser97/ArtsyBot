@@ -27,16 +27,15 @@ module.exports={
 		imageURL = await URLgetter(selectedSubreddit);
 
 		//only accepts URLs that contain png/jpg files and are not posted before (checked in my hash table)
-		while(imageURL==='-1' || table.exists(imageURL))
+		while(imageURL[0]==='-1' || table.exists(imageURL[0]) || table.existsOld(imageURL[1]))
 			imageURL = await URLgetter(selectedSubreddit);
 		
-		
-		log('    -> Image successfully fetched!' + `\r\n* Image URL: ${imageURL}` + '\r\n* Downloading Image...');
+		log('    -> Image successfully fetched!' + `\r\n* Image URL: ${imageURL[0]}` + '\r\n* Downloading Image...');
 	
 		//setting download options by specifying URL and destination
 		const downloadOptions = {
 
-			url: imageURL,
+			url: imageURL[0],
   			dest: `./images/x.jpg`
 		}
 
@@ -58,7 +57,7 @@ module.exports={
   		clearInterval(checkConnectionInterval);
 
   		//returns the image URL to be used in tweeter.js (to add URL to hash table when tweet is successfully sent)
-		return imageURL;
+		return imageURL[0];
 
 	},
 
