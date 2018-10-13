@@ -22,22 +22,25 @@ const getURL =  function(subreddit){
             let image;
             let oldImage;
             let crossParent;
+            let permalink;
 
             try {
 
                 image = json[0].data.children[0].data.url;
                 oldImage = json[0].data.children[0].data.preview.images[0].source.url;
                 crossParent = json[0].data.children[0].data.crosspost_parent;
+                permalink = json[0].data.children[0].data.permalink;
 
             } catch (error) {
 
                 image = json.data.children[0].data.url;
                 oldImage = json[0].data.children[0].data.preview.images[0].source.url;
                 crossParent = json.data.children[0].data.crosspost_parent;
+                permalink = json[0].data.children[0].data.permalink;
 
             }
 
-            if (!image) 
+            if(!image) 
             	return resolve('-1');
 
             if(crossParent)
@@ -48,7 +51,7 @@ const getURL =  function(subreddit){
             if(extension!='jpg' && extension!='png')
             	return resolve('-1');
             
-            return resolve([image,oldImage]);
+            return resolve([image,oldImage,permalink]);
 
         })
         .catch((err) => {
