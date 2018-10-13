@@ -19,12 +19,13 @@ var map = JSON.parse(fs.readFileSync('./data/data.json', 'utf8'));
 module.exports={
 
 	//example of how a url looks like: 'https://i.redditmedia.com/QOOy-WZ3OO0yWJaFkjmKJ0AzT2F4NGlkLnLEzMQHqfY.jpg?s=454a0b04a2b06661680aa05e12f9c40b'
+	//UPDATED URL: https://i.redd.it/gakoldunusr11.jpg
 	//I don't really care about the url so I will just put 0/1 in the value field of the map. Also, the whole links to every image are alreaddy logged in separate files
 
 	//takes the string after the last slash and before the first and only query in the URL and returns it as the hash key
 	generateKey : function(url){
 
-		return url.slice(url.lastIndexOf('/')+1 , url.lastIndexOf('?'));
+		return url.slice(url.lastIndexOf('/')+1 , url.lastIndexOf('.'));
 	},
 
 	//checks if the URL already exists in the hash table to prevent duplication
@@ -34,6 +35,16 @@ module.exports={
 			return true;
 
 		return false;
+	},
+
+	//after updating the image URL format I still have to check for the existing old URL format in the table
+	existsOld : function(url){
+
+		if(map[url.slice(url.lastIndexOf('/')+1 , url.lastIndexOf('?'))])
+			return true;
+
+		return false;
+
 	},
 
 	/*
