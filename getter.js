@@ -37,7 +37,7 @@ const getURL =  function(subreddit){
 
             }
 
-            if (!image || image=='-') 
+            if (!image) 
             	return resolve('-1');
 
             if(crossParent)
