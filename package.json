@@ -17,7 +17,7 @@
   "dependencies": {
     "image-downloader": "^3.4.1",
     "is-online": "^7.0.0",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.1.1",
     "twit": "^2.2.11"
   }
 }
